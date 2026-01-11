@@ -1,3 +1,8 @@
+"""""
+This model is for informational and educational purposes only. It does not constitute investment advice or a recommendation to buy or sell any security. Results are based on historical and third-party data that may be incomplete or inaccurate. Past performance does not guarantee future results. All investments involve risk, including loss of principal.
+"""""
+
+
 # FUNSA-Model
 FUNSA is a regime-aware capital allocation model. It evaluates macro risk (volatility, credit, rates) to determine market regime, confidence, and allowable exposure. Output specifies how much capital to deploy, how much to hold in cash, and which sectors to allocate to.
 
