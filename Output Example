@@ -1,0 +1,73 @@
+=== FUNSA v2 LIVE SIGNAL ===
+Active: True
+Regime: RegimeState(label='NEUTRAL', vix=14.489999771118164, active=True, exposure_scale=0.2938679402678303, risk_score=0.5877358805356606, confidence=0.17547176107132123, components_01={'vix_level': 0.6960190772627477, 'vix_trend': 0.5193213719578557, 'credit': 0.6420447738968814, 'rates': 0.4122622539810036}, raw_z={'vix_level_z': -0.8284121245357239, 'vix_trend_z': -0.07732399148681618, 'credit_trend_z': 0.5842501307024157, 'rates_trend_z': -0.3546211526012461})
+Picks: ['XLB', 'XLV', 'XLY', 'XLI']
+Target Weights: {'XLB': 0.08816038208034908, 'XLV': 0.08816038208034908, 'XLY': 0.05877358805356606, 'XLI': 0.05877358805356606}
+Cash Weight: 0.706
+Diagnostics (high level):
+  regime_module: funsa_v2\regime.py
+  regime_class: <class 'funsa_v2.regime.RegimeGate'>
+  vix: 14.489999771118164
+  risk_score: 0.5877358805356606
+  confidence: 0.17547176107132123
+  exposure_scale: 0.2938679402678303
+  filters.passed: 8
+  scoring.dispersion: 0.9786775240264511
+
+=== BACKTEST SUMMARY (basic) ===
+CAGR: 1.41%
+Sharpe: 0.37
+Max Drawdown: 13.57%
+Final Equity: 111,875.73
+
+
+What the signal is saying
+
+Regime: NEUTRAL
+Risk: mildly positive (risk_score ≈ 0.59)
+Conviction: low (confidence ≈ 0.18)
+Exposure allowed: ~29%
+Cash: ~71%
+
+Translation: Conditions are okay, but fragile. Participate lightly; preserve optionality.
+
+What you should do now
+1) Do not deploy full capital  Keep ~70% in cash.
+This is intentional. The model is protecting you from regime churn.
+
+2) If you trade, size exactly as shown
+Allocate small exploratory positions only:
+
+XLB: ~8.8%
+
+XLV: ~8.8%
+
+XLY: ~5.9%
+
+XLI: ~5.9%
+
+No leverage. No adds beyond target weights.
+
+3) Treat positions as probes, not convictions
+Use tight stops (model already enforces them).
+Be willing to exit quickly if regime deteriorates.
+
+
+
+What to monitor daily (simple checklist)
+
+Watch only these three numbers:
+1. risk_score
+  Action threshold: > 0.60
+2. confidence
+  Action threshold: > 0.40
+3. exposure_scale
+  Action threshold: > 0.50
+
+If all three improve:
+
+→ Gradually increase allocation (model will do this automatically).
+
+If any worsen:
+
+→ Reduce or exit remaining positions.
