@@ -1,1 +1,19 @@
 In order to run the FUNSA Model, run the run_funsa_v2.py file
+
+funsa folder layout
+
+>.venv
+>funsa_v2
+--__init__.py
+--backtest.py
+--config.py
+--data.py
+--filters.py
+--portfolio.py
+--regime.py
+--risk.py
+--scoring.py
+--signals.py
+debug_imports.py
+dev_reload.py
+run_funsa.py
